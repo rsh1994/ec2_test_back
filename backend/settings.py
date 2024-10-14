@@ -81,12 +81,12 @@ CORS_ALLOW_HEADERS = [
 ]
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = '/home/ubuntu/test_proj/backend/static'
 
 REACT_APP_DIR = os.path.join(BASE_DIR, '..', 'frontend')
 
 STATICFILES_DIRS = [
-    os.path.join(REACT_APP_DIR, 'build', 'static'),
+    os.path.join(BASE_DIR, 'static'),
 ]
 
 ROOT_URLCONF = 'backend.urls'
