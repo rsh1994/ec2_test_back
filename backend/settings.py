@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-(n67&(7y4!upbwim0!-fvsm@=9*!0v5&)ad&v#w0tpp^x^y0ho
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://3.35.238.62']
 
 
 # Application definition
@@ -58,12 +58,19 @@ CORS_ALLOW_ALL_ORIGINS = True  # 개발 환경에서만 사용, 프로덕션에�
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
+REACT_APP_DIR = os.path.join(BASE_DIR, '..', 'frontend')
+
 STATICFILES_DIRS = [
     os.path.join(REACT_APP_DIR, 'build', 'static'),
 ]
 
 ROOT_URLCONF = 'backend.urls'
+
+# HTTPS 설정 (선택사항)
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 TEMPLATES = [
     {
